@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="figuras.css">
+        <title>Figuras geométricas</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1>
+                Figuras geométricas
+            </h1>
+            <p>
+                Primer taller del curso práctico de JS
+            </p>
+        </header>
+        <section class="container">
+            <section id="sectionCuadrado" class="content">
+                <img src="/assets/square.png" alt="ícono de cuadrado">
+                <h2>
+                    Cuadrado
+                </h2>
+                <form id="formCuadrado" class="content__form">
+                    <label for="inputCuadrado">
+                        Escribe cuánto mide cada lado de tu cuadrado en cm:
+                    </label>
+                    <input id="inputCuadrado" type="number" placeholder="por ejemplo: 17"/>
+                    <button type="button" onclick="calcPerCuad()">
+                        Calcular perímetro
+                    </button>
+                    <button type="button" onclick="calcAreaCuad()">
+                        Calcular el área
+                    </button>
+                    <div class="content__form--resultado">
+                        <label class="label__resultado">
+                            Resultado:
+                        </label>
+                        <label id="outputCuadrado" class="resultado">
+                            e.g. "Area: 36.2 cm<sup>2</sup>"
+                        </label>
+                    </div>
+                </form>
+            </section>
+            <section id="sectionCirculo" class="content">
+                <img src="/assets/circle.png" alt="ícono de círculo">
+                <h2>
+                    Círculo
+                </h2>
+                <form id="formCirculo" class="content__form">
+                    <label for="inputCirculo">
+                        Escribe cuánto mide el rádio del círculo en cm:
+                    </label>
+                    <input type="number" id="inputCirculo" placeholder="por ejemplo: 12">
+                    <button type="button" onclick="calcPerCirc()">
+                        Calcular perímetro
+                    </button>
+                    <button type="button" onclick="calcAreaCirc()">
+                        Calcular área
+                    </button>
+                    <div class="content__form--resultado">
+                        <label class="label__resultado">
+                            Resultado:
+                        </label>
+                        <label id="outputCirculo" class="resultado">
+                            e.g. "Area: 3 cm<sup>2</sup>"
+                        </label>
+                    </div>
+                </form>
+            </section>
+            <section id="sectionTriangulo" class="content">
+                <img src="/assets/triangle.png" alt="ícono de triángulo">
+                <h2>
+                    Triángulo equilátero
+                </h2>
+                <form id="formTriangulo" class="content__form">
+                    <label for="inputTriangulo">
+                        Escribe cuánto mide un lado del tríangulo equilátero en cm:
+                    </label>
+                    <input type="number" id="inputTriangulo" placeholder="por ejemplo: 96">
+                    <button type="button" onclick="calcPerTriang()">
+                        Calcular perímetro
+                    </button>
+                    <button type="button" onclick="calcAreaTriang()">
+                        Calcular área
+                    </button>
+                    <div class="content__form--resultado">
+                        <label class="label__resultado">
+                            Resultado:
+                        </label>
+                        <label id="outputTriangulo" class="resultado">
+                            e.g. "Area: 65 cm<sup>2</sup>"
+                        </label>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <footer class="footer">
+            MoralessF
+        </footer>
+        <script src="./figuras.js"></script>
+    </body>
+</html>
