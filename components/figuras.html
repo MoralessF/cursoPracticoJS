@@ -40,7 +40,7 @@
                             Resultado:
                         </label>
                         <label id="outputCuadrado" class="resultado">
-                            e.g. "Area: 36.2 cm<sup>2</sup>"
+                            e.g. "Área: 36.2 cm<sup>2</sup>"
                         </label>
                     </div>
                 </form>
@@ -66,15 +66,15 @@
                             Resultado:
                         </label>
                         <label id="outputCirculo" class="resultado">
-                            e.g. "Area: 3 cm<sup>2</sup>"
+                            e.g. "Área: 3 cm<sup>2</sup>"
                         </label>
                     </div>
                 </form>
             </section>
             <section id="sectionTriangulo" class="content">
-                <img src="/assets/triangle.png" alt="ícono de triángulo">
+                <img src="/assets/triangle.png" alt="ícono de triángulo equilátero">
                 <h2>
-                    Triángulo equilátero
+                    Triángulo Equilátero
                 </h2>
                 <form id="formTriangulo" class="content__form">
                     <label for="inputTriangulo">
@@ -92,9 +92,36 @@
                             Resultado:
                         </label>
                         <label id="outputTriangulo" class="resultado">
-                            e.g. "Area: 65 cm<sup>2</sup>"
+                            e.g. "Área: 65 cm<sup>2</sup>"
                         </label>
                     </div>
+                </form>
+            </section>
+            <section id="sectionTrianguloIsos" class="content">
+                <img src="/assets/triangle.png" alt="ícono tríangulo isosceles">
+                <h2>
+                    Triángulo Isosceles
+                </h2>
+                <form id="formTrianguloIsos" class="content__form">
+                    <label for="inputTriangIsosCateto">
+                        Escribe la medida de la base y la de uno de los catetos en cm:
+                    </label>
+                    <input type="number" id="inputTriangIsosCateto" placeholder="cateto en cm">
+                    <input type="number" id="inputTriangIsosBase" placeholder="base en cm">
+                    <button type="button" onclick="calcPerTriangIsos()">
+                        Calcular perímetro
+                    </button>
+                    <button type="button" onclick="calcAreaTriangIsos()">
+                        Calcular área
+                    </button>
+                    <div class="content__form--resultado">
+                        <label class="label__resultado">
+                            Resultado:
+                        </label>
+                        <label id="outputTriangIsos" class="resultado">
+                            e.g. "Perímetro: 55 cm<sup> </sup>"
+                        </label>
+                    </div> 
                 </form>
             </section>
         </section>

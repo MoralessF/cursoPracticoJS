@@ -18,17 +18,17 @@ console.log("El area del cuadrado mide: "+areaCuadrado(5)+" cm2.");
 console.groupEnd();
 //Triángulo
 console.group("Triángulo");
-// const ladoTriangulo1=6;
-// const ladoTriangulo2=6;
-// const baseTriangulo=4;
-// const alturaTriangulo=5.5;
 function perimetroTriangulo(a)
 {
     return a*3;
 }
-function areaTriangulo(a)
+function areaTriangulo(b,h)
 {
-    return (Math.pow(a,2)*Math.sqrt(3))/4;
+    return b*h/2;
+}
+function alturaTriangulo(c,b)
+{
+    return Math.sqrt(Math.pow(c,2)-Math.pow(b/2,2));
 }
 //const areaTriangulo=(alturaTriangulo*baseTriangulo)/2;
 //console.log("Los lados del triangulo miden: "+ladoTriangulo1+" cm, "+ladoTriangulo2+" cm y "+baseTriangulo+" cm.");
@@ -151,13 +151,56 @@ function calcAreaTriang()
     const value=input.value;
     if(value!=0)
     {   
-        const area=areaTriangulo(value).toFixed(2);
-        const resultado="Área: "+area+" cm<sup>2<sup>";
+        const altura=alturaTriangulo(value,value).toFixed(2);
+        const area=areaTriangulo(value,altura).toFixed(2);
+        const resultado="Altura: "+altura+" cm <br>Área: "+area+" cm<sup>2</sup>";
         document.getElementById("outputTriangulo").innerHTML=resultado;
     }
     else
     {
-        document.getElementById("outputTriangulo").innerHTML="NaN<sup> <sup>";
+        document.getElementById("outputTriangulo").innerHTML="NaN<sup> </sup>";
+    }
+    return;
+}
+
+function calcAreaTriangIsos()
+{
+    const inputBase=document.getElementById("inputTriangIsosBase");
+    const inputCateto=document.getElementById("inputTriangIsosCateto");
+
+    const valueBase=inputBase.value;
+    const valueCateto=inputCateto.value;
+
+    if (valueBase!=0 && valueCateto!=0)
+    {
+        const altura=alturaTriangulo(valueCateto,valueBase).toFixed(2);
+        const area=areaTriangulo(valueBase,altura).toFixed(2);
+        const resultado="Altura: "+altura+" cm<br>Área: "+area+" cm<sup>2</sup>";
+        document.getElementById("outputTriangIsos").innerHTML=resultado;
+    }
+    else
+    {
+        document.getElementById("outputTriangIsos").innerHTML="NaN<sup> </sup>";
+    }
+    return;
+}
+function calcPerTriangIsos()
+{
+    const inputBase=document.getElementById("inputTriangIsosBase");
+    const inputCateto=document.getElementById("inputTriangIsosCateto");
+
+    const valueBase=inputBase.value;
+    const valueCateto=inputCateto.value;
+    if (valueBase!=0 && valueCateto!=0)
+    {
+        // const perimetro=perimetroTriangIsos(valueBase,valueCateto);
+        const perimetro=parseInt(valueBase)+parseInt(valueCateto)*2;
+        const resultado="Perímetro: "+ perimetro +" cm<sup> </sup>";
+        document.getElementById("outputTriangIsos").innerHTML=resultado;
+    }
+    else
+    {
+        document.getElementById("outputTriangIsos").innerHTML="NaN<sup> </sup>";
     }
     return;
 }
